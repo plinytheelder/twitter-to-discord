@@ -135,7 +135,7 @@ module.exports = (tweet, manual) => {
   modifiedText = modifiedText.trim();
 
   // Create a new string to send to Discord
-  let str = `\`\`\`qml\nNew Tweet from ${tweet.user.screen_name}:\`\`\``;
+  let str = `\`\`\`qml\nNew Tweet from <a href=https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}">${tweet.user.screen_name}</a>:\`\`\``;
   if (modifiedText) {
     let nameRT;
     if (tweet.retweeted_status) nameRT = tweet.retweeted_status.user.screen_name;
