@@ -135,10 +135,7 @@ module.exports = (tweet, manual) => {
   modifiedText = modifiedText.trim();
 
   // Create a new string to send to Discord
-  message.channel.send({embed: {
-  title: "New Tweet from ${tweet.user.screen_name}",
-  url: "https://twitter.com/${tweet.user.screen_name}/status/${tweet.id_str}"
-}});
+  let str = `\`\`\`qml\nNew Tweet from ${tweet.user.screen_name}:\`\`\``;
   if (modifiedText) {
     let nameRT;
     if (tweet.retweeted_status) nameRT = tweet.retweeted_status.user.screen_name;
